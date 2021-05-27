@@ -4,6 +4,7 @@ import * as cors from 'cors';
 
 import Database from './infra/db';
 import NewsController from './controller/newsController';
+import Auth from './infra/auth';
 
 class StartUp {
     public app: express.Application;
@@ -36,7 +37,9 @@ class StartUp {
         this.app.route('/').get((request, response) => {
             response.send({ versao: '0.0.1' });
         });
-
+        
+        this.app.use(Auth.validate);
+        
         // news
         this.app.route('/api/v1/news').get(NewsController.get);
         this.app.route('/api/v1/news/:id').get(NewsController.getById);
