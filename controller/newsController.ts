@@ -46,10 +46,6 @@ class NewsController {
         } catch (error) {
             console.error(error);
         }
-
-        // NewsService.create(vm)
-        //     .then(vm => Helper.sendResponse(response, HttpStatus.CREATED, 'Notícia cadastrada com sucesso!'))
-        //     .catch(error => console.error.bind(console, `Error ${error}`));
     }
 
     async update(request, response) {
@@ -62,10 +58,6 @@ class NewsController {
         } catch (error) {
             console.error(error);
         }
-
-        // NewsService.update(_id, news)
-        //     .then(() => Helper.sendResponse(response, HttpStatus.OK, `Notícia atualizada com sucesso!`))
-        //     .catch(error => console.error.bind(console, `Error ${error}`));
     }
 
     async delete(request, response) {
@@ -76,10 +68,6 @@ class NewsController {
         } catch (error) {
             console.error(error);
         }
-
-        // NewsService.delete(_id)
-        //     .then(() => Helper.sendResponse(response, HttpStatus.OK, 'Notícia deletada com sucesso!'))
-        //     .catch(error => console.error.bind(console, `Error ${error}`));
     }
 }
 
