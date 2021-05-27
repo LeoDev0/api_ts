@@ -13,3 +13,6 @@ services:
       - "28017:28017"
     environment:
       - AUTH=no
+    redis:
+      image: "redis"
+

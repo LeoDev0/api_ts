@@ -47,7 +47,7 @@ class StartUp {
             }
         });
         
-        this.app.use(Auth.validate);
+        // this.app.use(Auth.validate);
 
         // news
         this.app.route('/api/v1/news').get(NewsController.get);
