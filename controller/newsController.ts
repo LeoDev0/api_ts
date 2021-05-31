@@ -37,6 +37,21 @@ class NewsController {
             console.error(error);
         }
     }
+    
+    async search(request, response) {
+        try {
+            const term = request.params.term;
+            // const page = (request.param('page')) ? parseInt(request.param('page')) : 1;
+            const page = (request.query.page) ? parseInt(request.query.page) : 1;
+            // const perPage = (request.param('limit')) ? parseInt(request.param('limit')) : 10;
+            const perPage = (request.query.limit) ? parseInt(request.query.limit) : 10;
+
+            const result = await NewsService.search(term, page, perPage);
+            Helper.sendResponse(response, HttpStatus.OK, result);
+        } catch (error) {
+            console.error(error);
+        }
+    }
 
     async create(request, response) {
         try {
